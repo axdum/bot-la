@@ -75,10 +75,12 @@ function check() {
             const usersToNotify = m.userIds;
             usersToNotify.forEach(userId => {
                 client.users.fetch(userId).then((user) => {
-                    try {
-                        user.send('**' + m.name + '** va apparaître dans 5 minutes !\n' + m.locations);
-                    } catch (err) {
-                        console.log("err")
+                    if(user.presence.status == "online"){
+                        try {
+                            user.send('**' + m.name + '** va apparaître dans 5 minutes !\n' + m.locations);
+                        } catch (err) {
+                            console.log("err")
+                        }
                     }
                 })
             })
