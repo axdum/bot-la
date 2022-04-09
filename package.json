@@ -1,0 +1,23 @@
+{
+  "name": "bot-la",
+  "version": "1.0.0",
+  "description": "Bot Discord FR des marchants itinérants sur Lost Ark",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axdum/bot-la.git"
+  },
+  "author": "axdum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axdum/bot-la/issues"
+  },
+  "homepage": "https://github.com/axdum/bot-la#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
+  }
+}
