@@ -104,7 +104,7 @@ client.on('messageCreate', async message => {
         switch (command) {
             case 'aide':
             case 'help':
-                message.channel.send('Entrer le nom du marchant pour recevoir ses notifications (' + PREFIX + '<nom du marchant>).\nListe des commandes/marchants disponibles :\n!lucas\n!morris\n!mac\n!jeffrey\n!dorella\n!malone\n!burt\n!oliver\n!nox\n!aricer\n!rayni\n!ben\n!peter\n!laitir\nAutre commandes :\n!guide');
+                message.channel.send('Entrer le nom du marchant pour recevoir ses notifications (' + PREFIX + '<nom du marchant>).\nListe des commandes/marchants disponibles :\n' + PREFIX + 'lucas\n' + PREFIX + 'morris\n' + PREFIX + 'mac\n' + PREFIX + 'jeffrey\n' + PREFIX + 'dorella\n' + PREFIX + 'malone\n' + PREFIX + 'burt\n' + PREFIX + 'oliver\n' + PREFIX + 'nox\n' + PREFIX + 'aricer\n' + PREFIX + 'rayni\n' + PREFIX + 'ben\n' + PREFIX + 'peter\n' + PREFIX + 'laitir\nAutre commandes :\n' + PREFIX + 'guide');
                 break;
             case 'guide':
                 message.reply('https://lost-ark.maxroll.gg/resources/wandering-merchant-guide');
