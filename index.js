@@ -70,11 +70,12 @@ function check() {
     const hour = d.getHours();
     const mins = d.getMinutes();
     if (mins == 25) {
-        const nextMerchants = merchants.filter(m => m.schedules.includes(hour));
+        const nextMerchants = merchants.filter(m => !m.schedules.includes(hour));
         nextMerchants.forEach(m => {
             const usersToNotify = m.userIds;
             usersToNotify.forEach(userId => {
                 client.users.fetch(userId).then((user) => {
+                    console.log('envoi de la notification à ' + user.username + 'pour le marchand ' + m.name);
                     try {
                         user.send('**' + m.name + '** va apparaître dans 5 minutes !\n' + m.locations);
                     } catch (err) {
@@ -104,7 +105,7 @@ client.on('messageCreate', async message => {
         switch (command) {
             case 'aide':
             case 'help':
-                message.channel.send('Entrer le nom du marchant pour recevoir ses notifications (' + PREFIX + '<nom du marchant>).\nListe des commandes/marchants disponibles :\n' + PREFIX + 'lucas\n' + PREFIX + 'morris\n' + PREFIX + 'mac\n' + PREFIX + 'jeffrey\n' + PREFIX + 'dorella\n' + PREFIX + 'malone\n' + PREFIX + 'burt\n' + PREFIX + 'oliver\n' + PREFIX + 'nox\n' + PREFIX + 'aricer\n' + PREFIX + 'rayni\n' + PREFIX + 'ben\n' + PREFIX + 'peter\n' + PREFIX + 'laitir\nAutre commandes :\n' + PREFIX + 'guide');
+                message.channel.send('Entrer le nom du marchant pour recevoir ses notifications (' + PREFIX + '<nom du marchant>).\nListe des commandes/marchants disponibles :\n' + PREFIX + 'malone\n' + PREFIX + 'burt\n' + PREFIX + 'oliver\n' + PREFIX + 'nox\n' + PREFIX + 'aricer\n' + PREFIX + 'rayni\nAutre commandes :\n' + PREFIX + 'guide');
                 break;
             case 'guide':
                 message.reply('https://lost-ark.maxroll.gg/resources/wandering-merchant-guide');
